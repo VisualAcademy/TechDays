@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>자동 카운터 구하기</title>
+    <style>
+        .hitCount {
+            font-size: 200pt;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="hitCount" class="hitCount"></div>
+
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <script src="../Scripts/jquery.signalR-2.0.0.js"></script>
+    <!-- 자동으로 생성되는 허브 프록시 -->
+    <!--    <script src="/signalr/hubs"></script>-->
+    <script>
+        $(function () {
+            //[2] 자동 생성된 SignalR Hub 스크립트 미참조 : generated proxy 미사용
+            var con = $.hubConnection();
+            var hub = con.createHubProxy("hitCounter");
+
+            hub.on("hitRecorded", function (i) {
+                $("#hitCount").text(i);
+            });
+
+            con.start(function () {
+                hub.invoke("RecordHit");
+            });
+
+            ////[1] /signalr/hubs를 참조하는 코드 : generated proxy 사용
+            //var con = $.connection;
+            //var hub = con.hitCounter;
+
+            //// 서버에서 온 값
+            //hub.client.hitRecorded = function (i) {
+            //    $("#hitCount").text(i);
+            //};
+
+            //// 클라이언트에서 서버로 전송(호출)
+            //con.hub.start().done(function () {
+            //    hub.server.recordHit();
+            //});
+        });
+    </script>
+</body>
+</html>

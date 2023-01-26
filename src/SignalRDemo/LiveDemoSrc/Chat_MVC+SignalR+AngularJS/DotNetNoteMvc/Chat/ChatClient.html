@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>심플 채팅</title>
+</head>
+<body>
+    <input type="text" name="msg" value="" id="msg" />
+    <input type="button" name="send" value="전송" id="send" />
+    <ul id="msgs"></ul>
+
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script src="../Scripts/jquery.signalR-2.0.0.min.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script>
+        $(function () {
+            //[!] 로깅 설정
+            $.connection.hub.logging = true; 
+
+            //[1] 채팅 서버 연결
+            var hub = $.connection.chat;
+
+            //[2] 서버 -> 클라이언트
+            hub.client.serverToClient = function (msg) {
+                $("#msgs").append("<li>" + msg + "</li>");
+            };
+
+            //[3] 클라이언트 -> 서버
+            $.connection.hub.start().done(function () {
+                $("#send").click(function () {
+                    hub.server.clientToServer($("#msg").val()); // 전송
+                });
+            });
+
+            //[!] 예외 처리
+            $.connection.hub.error(function (err) {
+                alert("에러 발생: " + err);
+            });
+        });
+    </script>
+</body>
+</html>

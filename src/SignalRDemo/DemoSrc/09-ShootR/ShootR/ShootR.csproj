@@ -1,0 +1,961 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2FCC3FA2-0A13-4443-BB18-0A89F4F6E9A8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShootR</RootNamespace>
+    <AssemblyName>ShootR</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxMin">
+      <HintPath>..\packages\AjaxMin.4.48.4489.28432\lib\net20\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="EcmaScript.NET">
+      <HintPath>..\packages\YUICompressor.NET.2.0.0.0\lib\NET20\EcmaScript.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\YUICompressor.NET.2.0.0.0\lib\NET20\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.1.0.0\lib\net40\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Owin.1.0.0\lib\net45\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.1.0.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.1.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="SquishIt.Framework">
+      <HintPath>..\packages\SquishIt.0.9.1\lib\SquishIt.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Yahoo.Yui.Compressor">
+      <HintPath>..\packages\YUICompressor.NET.2.0.0.0\lib\NET20\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin.aspx" />
+    <TypeScriptCompile Include="Client\Abilities\AbilityHandlers\AbilityHandler.ts" />
+    <Content Include="Client\Abilities\AbilityHandlers\AbilityHandler.js">
+      <DependentUpon>AbilityHandler.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Abilities\AbilityHandlers\AbilityHandler.min.js">
+      <DependentUpon>AbilityHandler.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Abilities\AbilityHandlers\ShipAbilityHandler.ts" />
+    <Content Include="Client\Abilities\AbilityHandlers\ShipAbilityHandler.js">
+      <DependentUpon>ShipAbilityHandler.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Abilities\AbilityHandlers\ShipAbilityHandler.min.js">
+      <DependentUpon>ShipAbilityHandler.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Abilities\Abstractions\Ability.ts" />
+    <Content Include="Client\Abilities\Abstractions\Ability.js">
+      <DependentUpon>Ability.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Abilities\Abstractions\Ability.min.js">
+      <DependentUpon>Ability.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Abilities\Abstractions\MovementAbility.ts" />
+    <Content Include="Client\Abilities\Abstractions\MovementAbility.js">
+      <DependentUpon>MovementAbility.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Abilities\Abstractions\MovementAbility.min.js">
+      <DependentUpon>MovementAbility.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Abilities\Boost.ts" />
+    <Content Include="Client\Abilities\Boost.js">
+      <DependentUpon>Boost.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Abilities\Boost.min.js">
+      <DependentUpon>Boost.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Bullet\Bullet.ts" />
+    <Content Include="Client\Bullet\Bullet.js">
+      <DependentUpon>Bullet.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Bullet\Bullet.min.js">
+      <DependentUpon>Bullet.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Bullet\BulletManager.ts" />
+    <Content Include="Client\Bullet\BulletManager.js">
+      <DependentUpon>BulletManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Bullet\BulletManager.min.js">
+      <DependentUpon>BulletManager.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Collidable\MovementControllers\MovementController.ts" />
+    <TypeScriptCompile Include="Client\Collidable\Collidable.ts" />
+    <TypeScriptCompile Include="Client\Bullet\BulletMovementController.ts" />
+    <Content Include="Client\Bullet\BulletMovementController.js">
+      <DependentUpon>BulletMovementController.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Bullet\BulletMovementController.min.js">
+      <DependentUpon>BulletMovementController.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Collidable\Collidable.js">
+      <DependentUpon>Collidable.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Collidable\Collidable.min.js">
+      <DependentUpon>Collidable.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Collidable\MovementControllers\MovementController.js">
+      <DependentUpon>MovementController.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Collidable\MovementControllers\MovementController.min.js">
+      <DependentUpon>MovementController.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\HUD\NotificationManager.ts" />
+    <TypeScriptCompile Include="Client\GameGlobals.ts" />
+    <TypeScriptCompile Include="Client\Configuration\ConfigurationManager.ts" />
+    <TypeScriptCompile Include="Client\Collidable\MovementControllers\StationaryMovementController.ts" />
+    <Content Include="Client\Collidable\MovementControllers\StationaryMovementController.js">
+      <DependentUpon>StationaryMovementController.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Collidable\MovementControllers\StationaryMovementController.min.js">
+      <DependentUpon>StationaryMovementController.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Configuration\ConfigurationManager.js">
+      <DependentUpon>ConfigurationManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Configuration\ConfigurationManager.min.js">
+      <DependentUpon>ConfigurationManager.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Game.ts" />
+    <Content Include="Client\Game.js">
+      <DependentUpon>Game.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Game.min.js">
+      <DependentUpon>Game.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\GameController\Adapters\IETouchAdapter.ts" />
+    <TypeScriptCompile Include="Client\GameController\Adapters\MouseAdapter.ts" />
+    <Content Include="Client\GameController\Adapters\IETouchAdapter.js">
+      <DependentUpon>IETouchAdapter.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\Adapters\IETouchAdapter.min.js">
+      <DependentUpon>IETouchAdapter.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\Adapters\MouseAdapter.js">
+      <DependentUpon>MouseAdapter.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\Adapters\MouseAdapter.min.js">
+      <DependentUpon>MouseAdapter.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\GameController\Adapters\TouchAdapter.ts" />
+    <Content Include="Client\GameController\Adapters\TouchAdapter.js">
+      <DependentUpon>TouchAdapter.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\Adapters\TouchAdapter.min.js">
+      <DependentUpon>TouchAdapter.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\GameController\TouchController.ts" />
+    <TypeScriptCompile Include="Client\GameController\JoyStick.ts" />
+    <TypeScriptCompile Include="Client\GameController\controllerMain.ts" />
+    <Content Include="Client\GameController\controllerMain.js">
+      <DependentUpon>controllerMain.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\controllerMain.min.js">
+      <DependentUpon>controllerMain.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\JoyStick.js">
+      <DependentUpon>JoyStick.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\GameController\ShipControllerFunctions.ts" />
+    <Content Include="Client\GameController\JoyStick.min.js">
+      <DependentUpon>JoyStick.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\ShipControllerFunctions.js">
+      <DependentUpon>ShipControllerFunctions.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\ShipControllerFunctions.min.js">
+      <DependentUpon>ShipControllerFunctions.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\TouchController.js">
+      <DependentUpon>TouchController.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\TouchController.min.js">
+      <DependentUpon>TouchController.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameGlobals.js">
+      <DependentUpon>GameGlobals.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameGlobals.min.js">
+      <DependentUpon>GameGlobals.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\HUD\Animation\TextAnimation.ts" />
+    <Content Include="Client\HUD\Animation\TextAnimation.js">
+      <DependentUpon>TextAnimation.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\Animation\TextAnimation.min.js">
+      <DependentUpon>TextAnimation.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\HUD\Leaderboard.ts" />
+    <TypeScriptCompile Include="Client\HUD\DeathScreen.ts" />
+    <Content Include="Client\HUD\DeathScreen.js">
+      <DependentUpon>DeathScreen.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\DeathScreen.min.js">
+      <DependentUpon>DeathScreen.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\HUD\HUDManager.ts" />
+    <TypeScriptCompile Include="Client\HUD\GameDetailManager.ts" />
+    <TypeScriptCompile Include="Client\HUD\ExperienceMonitor.ts" />
+    <TypeScriptCompile Include="Client\HUD\EnvironmentMonitor.ts" />
+    <Content Include="Client\HUD\EnvironmentMonitor.js">
+      <DependentUpon>EnvironmentMonitor.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\EnvironmentMonitor.min.js">
+      <DependentUpon>EnvironmentMonitor.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\ExperienceMonitor.js">
+      <DependentUpon>ExperienceMonitor.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\ExperienceMonitor.min.js">
+      <DependentUpon>ExperienceMonitor.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\GameDetailManager.js">
+      <DependentUpon>GameDetailManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\GameDetailManager.min.js">
+      <DependentUpon>GameDetailManager.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\HUD\HealthMonitor.ts" />
+    <Content Include="Client\HUD\HealthMonitor.js">
+      <DependentUpon>HealthMonitor.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\HealthMonitor.min.js">
+      <DependentUpon>HealthMonitor.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\HUDManager.js">
+      <DependentUpon>HUDManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\HUDManager.min.js">
+      <DependentUpon>HUDManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\Leaderboard.js">
+      <DependentUpon>Leaderboard.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\Leaderboard.min.js">
+      <DependentUpon>Leaderboard.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\HUD\MyRankings.ts" />
+    <Content Include="Client\HUD\MyRankings.js">
+      <DependentUpon>MyRankings.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\MyRankings.min.js">
+      <DependentUpon>MyRankings.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\NotificationManager.js">
+      <DependentUpon>NotificationManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\NotificationManager.min.js">
+      <DependentUpon>NotificationManager.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Ship\Ship.ts" />
+    <TypeScriptCompile Include="Client\Managers\AnimationManager.ts" />
+    <TypeScriptCompile Include="Client\HUD\ShipStatMonitor.ts" />
+    <Content Include="Client\HUD\ShipStatMonitor.js">
+      <DependentUpon>ShipStatMonitor.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\ShipStatMonitor.min.js">
+      <DependentUpon>ShipStatMonitor.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Main.ts" />
+    <TypeScriptCompile Include="Client\Interfaces\IConfigurations.ts" />
+    <TypeScriptCompile Include="Client\Interfaces\IGameColors.ts" />
+    <Content Include="Client\Interfaces\IConfigurations.min.js">
+      <DependentUpon>IConfigurations.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Interfaces\IGameColors.min.js">
+      <DependentUpon>IGameColors.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Interfaces\IMoving.d.min.js">
+      <DependentUpon>IMoving.d.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Main.js">
+      <DependentUpon>Main.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Main.min.js">
+      <DependentUpon>Main.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Managers\AnimationManager.js">
+      <DependentUpon>AnimationManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Managers\AnimationManager.min.js">
+      <DependentUpon>AnimationManager.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Managers\spritify.ts" />
+    <Content Include="Client\Managers\spritify.js">
+      <DependentUpon>spritify.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Managers\spritify.min.js">
+      <DependentUpon>spritify.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Powerups\Powerup.ts" />
+    <TypeScriptCompile Include="Client\Powerups\HealthPack.ts" />
+    <Content Include="Client\Powerups\HealthPack.js">
+      <DependentUpon>HealthPack.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Powerups\HealthPack.min.js">
+      <DependentUpon>HealthPack.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Powerups\Powerup.js">
+      <DependentUpon>Powerup.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Powerups\Powerup.min.js">
+      <DependentUpon>Powerup.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Powerups\PowerupManager.ts" />
+    <Content Include="Client\Powerups\PowerupManager.js">
+      <DependentUpon>PowerupManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Powerups\PowerupManager.min.js">
+      <DependentUpon>PowerupManager.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Interfaces\IMoving.d.ts" />
+    <Content Include="Client\Ship\Ship.js">
+      <DependentUpon>Ship.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Ship\Ship.min.js">
+      <DependentUpon>Ship.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Ship\ShipAnimationHandler.ts" />
+    <Content Include="Client\Ship\ShipAnimationHandler.js">
+      <DependentUpon>ShipAnimationHandler.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Ship\ShipAnimationHandler.min.js">
+      <DependentUpon>ShipAnimationHandler.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Ship\ShipController.ts" />
+    <Content Include="Client\Ship\ShipController.js">
+      <DependentUpon>ShipController.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Ship\ShipController.min.js">
+      <DependentUpon>ShipController.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Ship\ShipManager.ts" />
+    <Content Include="Client\Ship\ShipManager.js">
+      <DependentUpon>ShipManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Ship\ShipManager.min.js">
+      <DependentUpon>ShipManager.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Space\AreaRenderer.ts" />
+    <TypeScriptCompile Include="Client\Ship\ShipMovementController.ts" />
+    <Content Include="Client\Ship\ShipMovementController.js">
+      <DependentUpon>ShipMovementController.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Ship\ShipMovementController.min.js">
+      <DependentUpon>ShipMovementController.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Space\AreaRenderer.js">
+      <DependentUpon>AreaRenderer.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Space\Camera.ts" />
+    <Content Include="Client\Space\AreaRenderer.min.js">
+      <DependentUpon>AreaRenderer.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Space\Camera.js">
+      <DependentUpon>Camera.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Space\Camera.min.js">
+      <DependentUpon>Camera.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Space\CanvasRenderer.ts" />
+    <Content Include="Client\Space\CanvasRenderer.js">
+      <DependentUpon>CanvasRenderer.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Space\CanvasRenderer.min.js">
+      <DependentUpon>CanvasRenderer.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Space\Map.ts" />
+    <Content Include="Client\Space\GameScreen.js">
+      <DependentUpon>GameScreen.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Space\GameScreen.min.js">
+      <DependentUpon>GameScreen.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Space\Map.js">
+      <DependentUpon>Map.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Space\Map.min.js">
+      <DependentUpon>Map.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Space\GameScreen.ts" />
+    <TypeScriptCompile Include="Client\Utilities\GameTime.ts" />
+    <TypeScriptCompile Include="Client\Utilities\ClientServerTime.ts" />
+    <Content Include="Client\Utilities\ClientServerTime.js">
+      <DependentUpon>ClientServerTime.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\ClientServerTime.min.js">
+      <DependentUpon>ClientServerTime.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\GameTime.js">
+      <DependentUpon>GameTime.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\GameTime.min.js">
+      <DependentUpon>GameTime.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Utilities\ImageAssets.ts" />
+    <Content Include="Client\Utilities\ImageAssets.js">
+      <DependentUpon>ImageAssets.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\ImageAssets.min.js">
+      <DependentUpon>ImageAssets.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Utilities\LatencyResolver.ts" />
+    <Content Include="Client\Utilities\LatencyResolver.js">
+      <DependentUpon>LatencyResolver.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\LatencyResolver.min.js">
+      <DependentUpon>LatencyResolver.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Utilities\PayloadManagement\PayloadDecompressor.ts" />
+    <Content Include="Client\Utilities\PayloadManagement\PayloadDecompressor.js">
+      <DependentUpon>PayloadDecompressor.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\PayloadManagement\PayloadDecompressor.min.js">
+      <DependentUpon>PayloadDecompressor.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Utilities\Size.ts" />
+    <TypeScriptCompile Include="Client\Interfaces\PayloadDefinitions.d.ts" />
+    <Content Include="Client\Utilities\Size.js">
+      <DependentUpon>Size.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\Size.min.js">
+      <DependentUpon>Size.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Utilities\UtilityFunctions.ts" />
+    <Content Include="Client\Utilities\UtilityFunctions.js">
+      <DependentUpon>UtilityFunctions.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\UtilityFunctions.min.js">
+      <DependentUpon>UtilityFunctions.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Utilities\ValueRef.ts" />
+    <Content Include="Client\Utilities\ValueRef.js">
+      <DependentUpon>ValueRef.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\ValueRef.min.js">
+      <DependentUpon>ValueRef.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Client\Utilities\Vector2.ts" />
+    <Content Include="Client\Utilities\Vector2.js">
+      <DependentUpon>Vector2.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\Vector2.min.js">
+      <DependentUpon>Vector2.ts</DependentUpon>
+    </Content>
+    <Content Include="controller.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\bg_stars.png" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\HUD\btn_Info_def.png" />
+    <Content Include="Images\HUD\btn_Info_over.png" />
+    <Content Include="Images\HUD\keys_def.png" />
+    <Content Include="Images\HUD\keys_over.png" />
+    <Content Include="Images\HUD\kills.png" />
+    <Content Include="Images\HUD\logout.png" />
+    <Content Include="Images\HUD\skull_deaths.png" />
+    <Content Include="Images\HUD\toast_btn_active.png" />
+    <Content Include="Images\Laser.png" />
+    <Content Include="Images\Page\badge_LEVEL.png" />
+    <Content Include="Images\Page\death_note.png" />
+    <Content Include="Images\Page\GitHubForkMe.png" />
+    <Content Include="Images\HUD\hearts.png" />
+    <Content Include="Images\HUD\HUD_whiteheart.png" />
+    <Content Include="Images\HUD\KilledBy_Default.png" />
+    <Content Include="Images\HUD\You_Default.png" />
+    <Content Include="Images\Page\leaderboard_arrow.png" />
+    <Content Include="Images\Page\leaderboard_divider.png" />
+    <Content Include="Images\Page\leaderboard_lion.png" />
+    <Content Include="Images\Page\SignalRLogoIdea.png" />
+    <Content Include="Images\Page\toast_controls.png" />
+    <Content Include="Images\Page\toast_start.png" />
+    <Content Include="Images\Page\toast_sysTIM.png" />
+    <Content Include="Images\Ships\Damage\damage_1.png" />
+    <Content Include="Images\Ships\Damage\damage_2.png" />
+    <Content Include="Images\Ships\Damage\damage_3.png" />
+    <Content Include="Images\Ships\Damage\damage_4.png" />
+    <Content Include="Images\Ships\Damage\damage_5.png" />
+    <Content Include="Images\Ships\Damage\damage_6.png" />
+    <Content Include="Images\Ships\Damage\damage_7.png" />
+    <Content Include="Images\Ships\LaserCat.png" />
+    <Content Include="Images\Ships\ship_lvl1.png" />
+    <Content Include="Images\Ships\ship_lvl10.png" />
+    <Content Include="Images\Ships\ship_lvl3.png" />
+    <Content Include="Images\Ships\ship_lvl5.png" />
+    <Content Include="Images\Ships\ship_lvl7.png" />
+    <Content Include="Images\Ships\ship_lvl8.png" />
+    <Content Include="Images\Ships\ship_lvl9.png" />
+    <Content Include="Images\SpriteSheets\explosion_1.png" />
+    <Content Include="Authentication\LoginHandler.ashx" />
+    <Content Include="Fonts\seguisb.ttf" />
+    <Content Include="Fonts\seguisb.eot" />
+    <Content Include="Client\Utilities\Vector2.js.map">
+      <DependentUpon>Vector2.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\NotificationManager.js.map">
+      <DependentUpon>NotificationManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Space\AreaRenderer.js.map">
+      <DependentUpon>AreaRenderer.ts</DependentUpon>
+    </Content>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Client\Abilities\Abstractions\Ability.js.map">
+      <DependentUpon>Ability.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Abilities\Abstractions\MovementAbility.js.map">
+      <DependentUpon>MovementAbility.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Abilities\Boost.js.map">
+      <DependentUpon>Boost.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Abilities\AbilityHandlers\AbilityHandler.js.map">
+      <DependentUpon>AbilityHandler.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Abilities\AbilityHandlers\ShipAbilityHandler.js.map">
+      <DependentUpon>ShipAbilityHandler.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Collidable\MovementControllers\MovementController.js.map">
+      <DependentUpon>MovementController.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Collidable\Collidable.js.map">
+      <DependentUpon>Collidable.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\ValueRef.js.map">
+      <DependentUpon>ValueRef.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\Size.js.map">
+      <DependentUpon>Size.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Ship\Ship.js.map">
+      <DependentUpon>Ship.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\GameTime.js.map">
+      <DependentUpon>GameTime.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Managers\AnimationManager.js.map">
+      <DependentUpon>AnimationManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameGlobals.js.map">
+      <DependentUpon>GameGlobals.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Managers\spritify.js.map">
+      <DependentUpon>spritify.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Managers\spritify.min.js.map">
+      <DependentUpon>spritify.js</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\ImageAssets.js.map">
+      <DependentUpon>ImageAssets.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Ship\ShipAnimationHandler.js.map">
+      <DependentUpon>ShipAnimationHandler.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Ship\ShipController.js.map">
+      <DependentUpon>ShipController.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Ship\ShipMovementController.js.map">
+      <DependentUpon>ShipMovementController.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Ship\ShipController.min.js.map">
+      <DependentUpon>ShipController.js</DependentUpon>
+    </Content>
+    <Content Include="Client\Ship\ShipManager.js.map">
+      <DependentUpon>ShipManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Space\Map.js.map">
+      <DependentUpon>Map.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\UtilityFunctions.js.map">
+      <DependentUpon>UtilityFunctions.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\ClientServerTime.js.map">
+      <DependentUpon>ClientServerTime.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\LatencyResolver.js.map">
+      <DependentUpon>LatencyResolver.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Utilities\PayloadManagement\PayloadDecompressor.js.map">
+      <DependentUpon>PayloadDecompressor.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Bullet\Bullet.js.map">
+      <DependentUpon>Bullet.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\Animation\TextAnimation.js.map">
+      <DependentUpon>TextAnimation.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\Animation\TextAnimation.min.js.map">
+      <DependentUpon>TextAnimation.js</DependentUpon>
+    </Content>
+    <Content Include="Client\Bullet\BulletMovementController.js.map">
+      <DependentUpon>BulletMovementController.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Bullet\Bullet.min.js.map">
+      <DependentUpon>Bullet.js</DependentUpon>
+    </Content>
+    <Content Include="Client\Bullet\BulletManager.js.map">
+      <DependentUpon>BulletManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Configuration\ConfigurationManager.js.map">
+      <DependentUpon>ConfigurationManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\Leaderboard.js.map">
+      <DependentUpon>Leaderboard.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\DeathScreen.js.map">
+      <DependentUpon>DeathScreen.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\DeathScreen.min.js.map">
+      <DependentUpon>DeathScreen.js</DependentUpon>
+    </Content>
+    <Content Include="Client\Space\Camera.js.map">
+      <DependentUpon>Camera.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Space\CanvasRenderer.js.map">
+      <DependentUpon>CanvasRenderer.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Space\GameScreen.js.map">
+      <DependentUpon>GameScreen.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Powerups\HealthPack.js.map">
+      <DependentUpon>HealthPack.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Powerups\Powerup.js.map">
+      <DependentUpon>Powerup.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Collidable\MovementControllers\StationaryMovementController.js.map">
+      <DependentUpon>StationaryMovementController.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Powerups\PowerupManager.js.map">
+      <DependentUpon>PowerupManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\GameDetailManager.js.map">
+      <DependentUpon>GameDetailManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\HealthMonitor.js.map">
+      <DependentUpon>HealthMonitor.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Ship\Ship.min.js.map">
+      <DependentUpon>Ship.js</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\ExperienceMonitor.js.map">
+      <DependentUpon>ExperienceMonitor.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\HUDManager.js.map">
+      <DependentUpon>HUDManager.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\MyRankings.js.map">
+      <DependentUpon>MyRankings.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\ShipStatMonitor.js.map">
+      <DependentUpon>ShipStatMonitor.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\HUD\EnvironmentMonitor.js.map">
+      <DependentUpon>EnvironmentMonitor.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Game.js.map">
+      <DependentUpon>Game.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\Main.js.map">
+      <DependentUpon>Main.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\Adapters\MouseAdapter.js.map">
+      <DependentUpon>MouseAdapter.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\Adapters\IETouchAdapter.js.map">
+      <DependentUpon>IETouchAdapter.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\Adapters\TouchAdapter.js.map">
+      <DependentUpon>TouchAdapter.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\TouchController.js.map">
+      <DependentUpon>TouchController.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\JoyStick.js.map">
+      <DependentUpon>JoyStick.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\ShipControllerFunctions.js.map">
+      <DependentUpon>ShipControllerFunctions.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\controllerMain.js.map">
+      <DependentUpon>controllerMain.ts</DependentUpon>
+    </Content>
+    <Content Include="Client\GameController\controllerMain.min.js.map">
+      <DependentUpon>controllerMain.js</DependentUpon>
+    </Content>
+    <Content Include="Client\Space\AreaRenderer.min.js.map">
+      <DependentUpon>AreaRenderer.js</DependentUpon>
+    </Content>
+    <Content Include="Images\SpriteSheets\explosion_2.png" />
+    <Content Include="Images\SpriteSheets\health_pack.png" />
+    <Content Include="Images\SpriteSheets\thrusters-BOOST.png" />
+    <Content Include="Images\SpriteSheets\thrust_basic.png" />
+    <Content Include="Images\SpriteSheets\thrust_start.png" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\janrain.js" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.9.0.min.js" />
+    <Content Include="Scripts\jquery.animate-colors-min.js" />
+    <Content Include="Scripts\jquery.d.min.js">
+      <DependentUpon>jquery.d.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\jquery.d.ts" />
+    <Content Include="Scripts\jquery.signalR-1.0.0.js" />
+    <Content Include="Scripts\jquery.signalR-1.0.0.min.js" />
+    <Content Include="Scripts\shortcut.js" />
+    <Content Include="Styles\bootstrap.min.css" />
+    <Content Include="Styles\controller.css" />
+    <Content Include="Styles\game.css" />
+    <Content Include="Styles\gameHUD.css" />
+    <Content Include="Styles\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Styles\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Styles\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\images\ui-icons_888888_256x240.png" />
+    <Content Include="Styles\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\jquery-ui-1.9.0.css" />
+    <Content Include="Styles\popups.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\Rpx.cs" />
+    <Compile Include="controller.aspx.cs">
+      <DependentUpon>controller.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controller.aspx.designer.cs">
+      <DependentUpon>controller.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\LoginHandler.ashx.cs">
+      <DependentUpon>LoginHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\Abilities\AbilityHandlers\ShipAbilityHandler.cs" />
+    <Compile Include="Server\AI\AIShipStatRecorder.cs" />
+    <Compile Include="Server\AI\AIState.cs" />
+    <Compile Include="Server\AI\UserAI.cs" />
+    <Compile Include="Server\Bullet\Bullet.cs" />
+    <Compile Include="Server\Bullet\BulletManager.cs" />
+    <Compile Include="Server\Bullet\BulletMovementController.cs" />
+    <Compile Include="Server\Collidable\DamageControllers\DamageController.cs" />
+    <Compile Include="Server\Collidable\DamageControllers\HarmlessDamageController.cs" />
+    <Compile Include="Server\Collidable\LifeControllers\LifeController.cs" />
+    <Compile Include="Server\Collidable\MovementControllers\StationaryMovementController.cs" />
+    <Compile Include="Server\Configuration\AbilityConfiguration.cs" />
+    <Compile Include="Server\Configuration\HealthPackConfiguration.cs" />
+    <Compile Include="Server\Configuration\LeaderboardConfiguration.cs" />
+    <Compile Include="Server\Configuration\MapConfiguration.cs" />
+    <Compile Include="Server\Configuration\RuntimeConfiguration.cs" />
+    <Compile Include="Server\Configuration\ScreenConfiguration.cs" />
+    <Compile Include="Server\Configuration\ShipMovementControllerConfiguration.cs" />
+    <Compile Include="Server\Game.cs" />
+    <Compile Include="Server\GenericManagers\CollisionManager.cs" />
+    <Compile Include="Server\Configuration\BulletConfiguration.cs" />
+    <Compile Include="Server\Configuration\GameConfigurationManager.cs" />
+    <Compile Include="Server\Configuration\GameConfiguration.cs" />
+    <Compile Include="Server\Configuration\ShipConfiguration.cs" />
+    <Compile Include="Server\GameHub.cs" />
+    <Compile Include="Server\GenericManagers\ConnectionManager.cs" />
+    <Compile Include="Server\GenericManagers\GameHandler.cs" />
+    <Compile Include="Server\Leaderboard\Leaderboard.cs" />
+    <Compile Include="Server\Leaderboard\LeaderboardEntry.cs" />
+    <Compile Include="Server\AI\ShipAI.cs" />
+    <Compile Include="Server\PayloadManagement\CompressionContracts\PowerupCompressionContract.cs" />
+    <Compile Include="Server\Powerups\HealthPack.cs" />
+    <Compile Include="Server\Powerups\Powerup.cs" />
+    <Compile Include="Server\Powerups\PowerupManager.cs" />
+    <Compile Include="Server\Registration\RegisteredClient.cs" />
+    <Compile Include="Server\Registration\RegistrationHandler.cs" />
+    <Compile Include="Server\Abilities\Abstractions\Ability.cs" />
+    <Compile Include="Server\Abilities\Boost.cs" />
+    <Compile Include="Server\Abilities\Abstractions\MovementAbility.cs" />
+    <Compile Include="Server\Abilities\AbilityHandlers\AbilityHandler.cs" />
+    <Compile Include="Server\Ship\Levels\LevelCalculator.cs" />
+    <Compile Include="Server\Ship\Levels\ShipLevelManager.cs" />
+    <Compile Include="Server\Ship\ShipLifeController.cs" />
+    <Compile Include="Server\Ship\ShipManager.cs" />
+    <Compile Include="Server\Ship\ShipStatRecorder.cs" />
+    <Compile Include="Server\User\IdleManager.cs" />
+    <Compile Include="Server\User\NotificationManager.cs" />
+    <Compile Include="Server\User\RespawnManager.cs" />
+    <Compile Include="Server\User\User.cs" />
+    <Compile Include="Server\User\UserHandler.cs" />
+    <Compile Include="Server\Utilities\ValueRef.cs" />
+    <Compile Include="Server\Utilities\EventHandlers\DeathEventHandler.cs" />
+    <Compile Include="Server\Utilities\EventHandlers\KillEventHandler.cs" />
+    <Compile Include="Server\Utilities\EventHandlers\LevelUpEventHandler.cs" />
+    <Compile Include="Server\Utilities\ErrorLog.cs" />
+    <Compile Include="Server\Utilities\HighFrequencyTimer.cs" />
+    <Compile Include="Server\PayloadManagement\CompressionContracts\BulletCompressionContract.cs" />
+    <Compile Include="Server\PayloadManagement\CompressionContracts\CollidableCompressionContract.cs" />
+    <Compile Include="Server\PayloadManagement\CompressionContracts\LeaderboardEntryCompressionContract.cs" />
+    <Compile Include="Server\PayloadManagement\CompressionContracts\PayloadCompressionContract.cs" />
+    <Compile Include="Server\PayloadManagement\CompressionContracts\ShipCompressionContract.cs" />
+    <Compile Include="Server\PayloadManagement\LeaderboardPayload.cs" />
+    <Compile Include="Server\PayloadManagement\PayloadCache.cs" />
+    <Compile Include="Server\PayloadManagement\PayloadCompressor.cs" />
+    <Compile Include="Server\AI\AIPayloadDecompressor.cs" />
+    <Compile Include="Server\PayloadManagement\PayloadManager.cs" />
+    <Compile Include="Server\Ship\Ship.cs" />
+    <Compile Include="Server\Ship\ShipMovementController.cs" />
+    <Compile Include="Server\Ship\ShipWeaponController.cs" />
+    <Compile Include="Server\Space\Map.cs" />
+    <Compile Include="Server\Space\MapBoundary.cs" />
+    <Compile Include="Server\Space\QuadTree.cs" />
+    <Compile Include="Server\Space\QuadTreeNode.cs" />
+    <Compile Include="Server\Collidable\Collidable.cs" />
+    <Compile Include="Server\Utilities\GameTime.cs" />
+    <Compile Include="Server\Utilities\Movement.cs" />
+    <Compile Include="Server\Collidable\MovementControllers\MovementController.cs" />
+    <Compile Include="Server\Utilities\MovementFlags.cs" />
+    <Compile Include="Server\PayloadManagement\Payload.cs" />
+    <Compile Include="Server\Utilities\Vector2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64049</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:46957/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

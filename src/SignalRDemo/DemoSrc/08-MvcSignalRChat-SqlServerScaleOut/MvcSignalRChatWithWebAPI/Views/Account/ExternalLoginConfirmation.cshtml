@@ -1,0 +1,32 @@
+﻿@model MvcSignalRChatWithWebAPI.Models.ExternalLoginConfirmationViewModel
+@{
+    ViewBag.Title = "등록";
+}
+
+<hgroup>
+    <h2>@ViewBag.Title.</h2>
+    <h3>Associate your @ViewBag.LoginProvider account.</h3>
+</hgroup>
+
+@using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>연결 양식</legend>
+       <p class="text-success">
+            다음으로 인증되었습니다. <strong>@ViewBag.LoginProvider</strong>.
+            아래에 이 사이트의 사용자 이름을 입력하고 등록 단추를 클릭하여 로그인을
+            마칩니다.
+        </p>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+        <br />
+        <input type="submit" class="btn" value="등록" />
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
